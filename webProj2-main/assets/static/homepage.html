@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <link rel="stylesheet" type="text/css" href='/static/Css.css'>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    div.box{
+      align-items: center;
+      justify-content: center;
+    }
+    header {
+
+      border-top: 20px;
+          width: 100%;         
+          height: 50px;
+      background-color: #2E4053;
+    }
+    div.left{
+      left: 0;
+      width: 50%;
+      position: absolute;
+
+      padding-right: 30px;
+    }
+    div.right{
+      right: 0;
+      width: 25%;
+      padding-right: 40px;
+      background-color: #2E4053;
+      position: absolute;
+    }
+    header h2{
+      top: 0;
+      text-align: right;
+    }
+    div.input{
+      display: block;
+      float: right;
+    }
+    html {
+
+      background-color: #2E4053;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: aliceblue;
+      margin: 0;
+    }
+
+
+    header,
+    footer {
+      background-color: #2E4053;
+      text-align: light;
+      color: #F8F9F9;
+    }
+
+    footer {
+
+      text-align: center;
+    }
+
+    footer button {
+      height: 50px;
+      width: 150px;
+      padding: 5px;
+      margin: 15px;
+      text-decoration: none;
+      color: white;
+      background: none;
+      border-color: white;
+      border-radius: 5px;
+    }
+
+    footer button:hover {
+      background: skyblue;
+      color: steelblue;
+    }
+
+    .foo {
+      padding: 1px;
+      margin: 1px;
+      background-color: cadetblue;
+      justify-content: center;
+    }
+
+    .foo a {
+      text-decoration: none;
+    }
+
+    .foo h4 {
+      text-decoration: none;
+      color: white;
+      padding-bottom: 0px;
+    }
+
+    .foo:hover {
+      background-color: rgb(144, 205, 207);
+    }
+
+    .con {
+      padding: 3px;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      padding: 20px;
+      margin-bottom: 0px;
+    }
+
+    .navbar {
+      top: auto;
+      padding-top: 64px;
+      background-color: #2E4053;
+      width: 100%;
+      overflow: auto;
+    }
+
+    .navbar a {
+      float: left;
+      color: #FDFEFE;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #85929E;
+    }
+
+    .h3.p1 {
+      align-items: center;
+      position: relative;
+
+    }
+
+    .slide {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .card {
+
+      text-align: center;
+      width: 27%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      margin: 10px;
+      background-color: rgb(247, 246, 245);
+      justify-content: center;
+      border-radius: 15px;
+
+    }
+
+    .card-img-top {
+      height: 400px;
+    }
+
+    .card-img-top:hover {
+      opacity: 0.5;
+    }
+
+    .des {
+      color: lightslategray;
+      font-size: 12px;
+
+      text-align: center;
+    }
+
+    .price {
+      color: lightslategray;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .card button {
+      border: none;
+      color: white;
+      padding: 12px;
+      background-color: #2E4053;
+      text-align: center;
+      cursor: pointer;
+      width: 190px;
+    }
+
+    .card-body {
+      margin: 10px;
+      padding: 12px;
+    }
+
+    .card-body:hover {
+
+      margin: 10px;
+      padding: 12px;
+
+    }
+
+    .card button:hover {
+      background-color: cadetblue;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
+      border: solid #95A5A6 2px;
+
+    }
+
+    .sp h1 {
+      margin-top: 0px;
+      text-align: center;
+      text-transform: uppercase;
+      background: red;
+      color: white;
+      letter-spacing: 10px;
+      font-family: sans-serif;
+    }
+
+    .pic {
+      height: 500px;
+      width: auto;
+
+    }
+
+    .columnft {
+      flex-direction: row;
+    }
+
+    .columnft p {
+      color: white;
+      text-decoration: none;
+    }
+
+    input#search {
+      float: right;
+      height: 36px;
+      width: 250px;
+      border: none;
+      border-radius: 0px 5px 5px 0px;
+      padding: 6px;
+      margin-top: 8px;
+      margin-right: 16px;
+      font-size: 17px;
+    }
+
+    /* search */
+    input#submit {
+      width: 36px;
+      height: 36px;
+      display: block;
+      border: none;
+      border-radius: 5px 0px 0 5px;
+      align-items: center;
+      float: right;
+      margin-top: 8px;
+      font-size: 17px;
+      background: lightslategray;
+
+    }
+
+    input#submit:hover {
+      background: cadetblue;
+
+    }
+
+
+    /*end adver*/
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+  <header id="top">
+    <div class="left">
+      <h1>SHOPME</h1>
+    </div>
+    <!-- Api weather</-->
+    <div>
+     <div class="right"><h2>Current weather</h2>
+    <div class="input">
+      <input type="text" placeholder="Type:Bangkok, New York or Japan" value="Bangkok" class="input_text">
+      <input type="submit" value="Enter" class="submit">
+      <div class="box2">
+        <h1 class="name" id="name"></h1>
+        <p class="temp"></p>
+        <p class="visibility"></p>
+        <p class="wind"></p>
+        <p class="desc"></p>
+    </div>
+  <script src="/static/weather.js"></script>
+    </div>
+  </div>
+
+  
+    </div>
+
+
+  </header>
+  
+  
+  
+  
+  <div class="navbar">
+    <a href="homepage">&#9824 Home</a>
+    <a href="search"> &#9827 Search</a>
+    <a href="login"> &#9829 Login</a>
+    <a href="aboutus"> &#9830 About Us</a>
+
+
+
+  </div>
+  <div class="slide">
+    <img class="mySlides" src="../picture/bx.jpg" width="100%">
+    <img class="mySlides" src="../picture/z.jpg" width="100%">
+    <img class="mySlides" src="../picture/ni.jpg" width="100%">
+    <img class="mySlides" src="../picture/h.jpg" width="100%">
+  </div>
+
+  <div class="sp">
+    <h1><b>special for today</b></h1>
+  </div>
+  <div class="container">
+
+    <div class="card" style="width: 18rem;">
+      <img src="../picture/zelda.jpg" class="card-img-top" alt="card">
+      <div class="card-body">
+        <h4><b>Legend of Zelda: Breath of the Wild</b></h4>
+        <section class="price"> 1680฿ </section><br>
+        <section class="des">Step into a world of discorvery, exploration, and adventure in The Legend of Zelda.
+        </section><br>
+        <p><button>Add to Cart</button></p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="../picture/sw.jpg" class="card-img-top" alt="card">
+      <div class="card-body">
+        <h4><b>Pokemon Shield</b></h4>
+        <section class="price"> 1690฿ </section><br>
+        <section class="des">Pokemon Sword and Pokemon Shield introduce the Galar region and more Pokemon to discover!
+        </section><br>
+        <p><button>Add to Cart</button></p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="../picture/ow.jpg" class="card-img-top" alt="card">
+      <div class="card-body">
+        <h4><b>Overwatch</b></h4>
+        <section class="price"> 1200฿ </section><br>
+        <section class="des">The World Needs Heros Slow down time, rain destruction from above in a jet-powered armor
+          suit, or pilot superpower hamster in ball.</section><br>
+        <p><button>Add to Cart</button></p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="../picture/det.jpg" class="card-img-top" alt="card">
+      <div class="card-body">
+        <h4><b>Detroit: Become Human</b></h4>
+        <section class="price"> 1200฿ </section><br>
+        <section class="des">Puts the destiny of both mankind and androids in your hands, taking you to a future where
+          machines have become more intelligent than human.</section><br>
+        <p><button>Add to Cart</button></p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="../picture/mon.jpg" class="card-img-top" alt="card">
+      <div class="card-body">
+        <h4><b>Monster Hunter World: Iceborne</b></h4>
+        <section class="price"> 1200฿ </section><br>
+        <section class="des">Iceborne expands the possibilities of Monster Hunter: World's vast breathtaking universe.
+        </section><br>
+        <p><button>Add to Cart</button></p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="../picture/rune.jpg" class="card-img-top" alt="card">
+      <div class="card-body">
+        <h4><b>Rune Factory</b></h4>
+        <section class="price"> 1200฿ </section><br>
+        <section class="des">Rune Factory (ルーンファクトリー, Rūn Fakutorī) is a role-playing simulation video game series
+          developed by Neverland Co., Ltd. for the Nintendo DS, Nintendo 3DS, Nintendo Switch, Wii and the PlayStation 3
+          video game consoles, and a spin-off of the Harvest Moon/Story of Season video game series.</section><br>
+        <p><button>Add to Cart</button></p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="../picture/twi.jpg" class="card-img-top" alt="card">
+      <div class="card-body">
+        <h4><b>Twilight Princess</b></h4>
+        <section class="price"> 1200฿ </section><br>
+        <section class="des">In the tallest tower, he and Midna find a cloaked young woman. She immediately explains to
+          Link how Hyrule came to be shrouded in Twilight, and reveals her true ...<p><button>Add to Cart</button></p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="../picture/mine.jpg" class="card-img-top" alt="card">
+      <div class="card-body">
+        <h4><b>Minecarft</b></h4>
+        <section class="price"> 1200฿ </section><br>
+        <section class="des">Prepare for an adventure of limitless possibilities as you build, mine, battle mobs, and
+          explore the ever-changing Minecraft landscape.</section><br>
+        <p><button>Add to Cart</button></p>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <footer>
+    <div class="foo">
+      <a href="#top">
+        <h4>Back to Top</h4>
+      </a>
+
+    </div>
+    <article class="containerft">
+      <article class="columnft"></article>
+      <a href="aboutus"><button>about us</button></a>
+    </article>
+
+    <article class="columnft">
+      <button>email</button>
+    </article>
+
+    <article class="columnft">
+      <button>address</button>
+    </article>
+    </article>
+  </footer>
+</body>
+
+<script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {
+      myIndex = 1
+    }
+    x[myIndex - 1].style.display = "block";
+    setTimeout(carousel, 4500); // Change image every 2 seconds
+  }
+</script>
+
+</html>

@@ -1,0 +1,335 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+
+  background-color: #2E4053;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: aliceblue;
+  margin: 0;
+}
+
+header h1 {
+  border: none;
+  top: 0;
+  background-color: #2E4053;
+}
+
+header,
+footer {
+  background-color: #2E4053;
+  text-align: light;
+  color: #F8F9F9;
+}
+
+footer {
+
+  text-align: center;
+}
+
+footer button {
+  height: 50px;
+  width: 150px;
+  padding: 5px;
+  margin: 15px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border-color: white;
+  border-radius: 5px;
+}
+
+footer button:hover {
+  background: skyblue;
+  color: steelblue;
+}
+
+
+.con {
+  padding: 3px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  padding: 20px;
+  margin-bottom: 0px;
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  background-color: #2E4053;
+  width: 100%;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  color: #FDFEFE;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background-color: #85929E;
+}
+
+.h3.p1 {
+  align-items: center;
+  position: relative;
+
+}
+
+.slide {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+
+  text-align: center;
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px;
+  background-color: lightslategrey;
+  justify-content: center;
+  border-radius: 15px;
+
+}
+
+.card-img-top {
+  height: 400px;
+}
+
+.card-img-top:hover {
+  opacity: 0.5;
+}
+
+.des {
+  color: lightslategray;
+  font-size: 12px;
+
+  text-align: center;
+}
+
+.price {
+  color: lightslategray;
+  font-size: 17px;
+  text-align: center;
+}
+
+.card button {
+  border: none;
+  color: white;
+  padding: 12px;
+  background-color: #2E4053;
+  text-align: center;
+  cursor: pointer;
+  width: 190px;
+}
+
+.card-body {
+  margin: 10px;
+  padding: 12px;
+}
+
+
+
+.sp h1 {
+  margin-top: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  background: red;
+  color: white;
+  letter-spacing: 10px;
+  font-family: sans-serif;
+}
+
+.pic {
+  height: 500px;
+  width: auto;
+
+}
+
+.columnft {
+  flex-direction: row;
+}
+
+.columnft p {
+  color: white;
+  text-decoration: none;
+}
+
+input#search {
+  float: right;
+  height: 36px;
+  width: 250px;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+/* search */
+input#submit {
+  width: 36px;
+  height: 36px;
+  display: block;
+  border: none;
+  border-radius: 5px 0px 0 5px;
+  align-items: center;
+  float: right;
+  margin-top: 8px;
+  font-size: 17px;
+  background: lightslategray;
+
+}
+
+input#submit:hover {
+  background: darkcyan;
+
+}
+
+
+.textb {
+  color: #fff;
+  background:  rgb(159, 230, 230);
+  border: 1px valid rgba(255, 255, 255, 0.4);
+}
+
+.textb::placeholder {
+  color: white;
+}
+
+.textb:hover,
+.textb:focus {
+  background-color: #fff;
+  width: 350px;
+  color: black;
+}
+
+.submitb:hover {
+  color: white;
+  background-color: #18222c;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  /*margin:20px;*/
+  color: white;
+  font-weight: bold;
+}
+
+input {
+  border: none;
+  height: 50px;
+  width: 250px;
+  margin: 10px 0;
+  padding: 0 10px;
+  font-size: 1rem;
+  outline: none;
+  text-align: center;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+form {
+  margin: 50px;
+}
+
+form h1 {
+  color: black;
+}
+
+form button {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  ;
+  background-color: #2E4053;
+  color: white;
+}
+
+form button:hover {
+  background-color: #85929E;
+}
+
+.admin {
+  margin: 300px;
+  text-align: center;
+  align-items: center;
+}
+
+
+.admin h1 {
+  color: #18222c;
+  font-size: 60px;
+}
+
+.admin button {
+  padding: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: rgb(159, 230, 230);
+  font-size: 25px;
+
+}
+
+.admin button:hover {
+  color: #fff;
+  background-color: rgb(109, 197, 168);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.admin a {
+  color: #18222c;
+  font-size: 0.58;
+
+}
+
+.noLogin h1 {
+
+  font-family: sans-serif;
+}
+
+/*end adver*/

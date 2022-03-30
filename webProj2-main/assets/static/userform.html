@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href='/static/Css.css'>
+</head>
+
+<body>
+  <header id="top">
+    <h1>SHOPME
+
+    </h1>
+  </header>
+  <div class="navbar">
+    <a href="homepage">&#9824 Home</a>
+    <a href="search"> &#9827 Search</a>
+    <a href="login"> &#9829 Login</a>
+    <a href="aboutus"> &#9830 About Us</a>
+    <a href="admin"> ⭐ admin</a>
+    <br>
+  </div>
+  <form>
+    <h1>User</h1>
+    <label>UserID:</label>
+    <input type="text" placeholder="123456" id="SD"><br>
+    <label>Firstname:</label>
+    <input type="text" placeholder="xxxxx" id="FN"><br>
+    <label>Lastname:</label>
+    <input type="text" placeholder="xxxxx" id="LN"><br>
+    <label>Email:</label>
+    <input type="text" placeholder="xxx@xxx.xx" id="email"><br>
+    <label>address:</label>
+    <input type="text" placeholder="address" id="AD"><br>
+    <label>Phonenumber:</label>
+    <input type="text" placeholder="0xxxxxxxxx" id="PN"><br>
+    <label>Date of birth:</label>
+    <input type="text" placeholder="YYYY-MM-DD" id="DOB"><br>
+    <label>Username:</label>
+    <input type="text" placeholder="Username" id="UN"><br>
+    <label>Password:</label>
+    <input type="text" placeholder="Password" id="PW"><br>
+    <label>Role:</label>
+    <input type="text" placeholder="admin/user" id="R"><br>
+      
+    <button type="button" id="Insert" class="btnIN">Insert</button>
+    <button type="button" id="Update" class="btnUp">Update</button>
+    <button type="button" id="Delete" class="btnDe">Delete</button>
+    <button type="button" id="Select" class="btnSe">Select</button>
+    <button type="button" id="Selectall" class="btnSA">Select all</button>
+    <div id="result">
+
+    </div>
+  </form>
+  <script>
+
+    async function callUSERWS(url, method, sentData = {}) {
+      let data;
+      if (method == "selectall") {
+        let response = await fetch(url, {
+          method: "GET",
+        });
+        data = await response.json();
+      } else if (method == "select") {
+        let response = await fetch(url, {
+          method: "GET",
+        });
+        data = await response.json();
+      } else if (method == "insert" || method == "update" || method == "delete") {
+        let aMethod;
+        if (method == "insert") {
+          aMethod = "POST";
+        } else if (method == "update") {
+          aMethod = "PUT";
+        } else if (method == "delete") {
+          aMethod = "DELETE";
+        }
+        let response = await fetch(url, {
+          method: aMethod,
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(sentData),
+        });
+        data = await response.json();
+      }
+      return data;
+    }
+    let U_ID, U_FNAME, U_LNAME, U_EMAIL, U_ADDRESS, U_PHONE, U_DOB, U_USER, U_PASS, U_ROLE;
+    let U_IDTxtRef = document.querySelector("#SD");
+    let U_FNAMETxtRef = document.querySelector("#FN");
+    let U_LNAMETxtRef = document.querySelector("#LN");
+    let U_EMAILTxtRef = document.querySelector("#email");
+    let U_ADDRESSTxtRef = document.querySelector("#AD");
+    let U_PHONETxtRef = document.querySelector("#PN");
+    let U_DOBTxtRef = document.querySelector("#DOB");
+    let U_USERTxtRef = document.querySelector("#UN");
+    let U_PASSTxtRef = document.querySelector("#PW");
+    let U_ROLETxtRef = document.querySelector("#R")
+
+
+    function clearInput() {
+      U_IDTxtRef.value = "";
+      U_FNAMETxtRef.value = "";
+      U_LNAMETxtRef.value = "";
+      U_EMAILTxtRef.value = "";
+      U_ADDRESSTxtRef.value = "";
+      U_PHONETxtRef.value = "";
+      U_DOBTxtRef.value = "";
+      U_USERTxtRef.value = "";
+      U_PASSTxtRef.value = "";
+      U_ROLETxtRef.value = "";
+    }
+    let insertBtnRef = document.querySelector("#Insert");
+    let updateBtnRef = document.querySelector("#Update");
+    let deleteBtnRef = document.querySelector("#Delete");
+    let selectBtnRef = document.querySelector("#Select");
+    let selectallBtnRef = document.querySelector("#Selectall");
+    insertBtnRef.addEventListener("click", () => {
+      U_ID = U_IDTxtRef.value;
+      U_FNAME = U_FNAMETxtRef.value;
+      U_LNAME = U_LNAMETxtRef.value;
+      U_EMAIL = U_EMAILTxtRef.value;
+      U_ADDRESS = U_ADDRESSTxtRef.value;
+      U_PHONE = U_PHONETxtRef.value;
+      U_DOB = U_DOBTxtRef.value;
+      U_USER = U_USERTxtRef.value;
+      U_PASS = U_PASSTxtRef.value;
+      U_ROLE = U_ROLETxtRef.value;
+      let user_data = {
+        user: {
+     
+          UID: U_ID,
+          fname: U_FNAME,
+          lname: U_LNAME,
+          Email: U_EMAIL,
+          address: U_ADDRESS,
+          pnumber: U_PHONE,
+          DOB: U_DOB,
+          username: U_USER,
+          pword: U_PASS,
+          urole: U_ROLE
+        },
+      };
+      callUSERWS("http://localhost:3030/user", "insert", user_data).then(
+        (data) => {
+          console.log(data);
+          if (data.data > 0) {
+            alert(data.message);
+            clearInput();
+          }
+        }
+      );
+    });
+    updateBtnRef.addEventListener("click", () => {
+      U_ID = U_IDTxtRef.value;
+      U_FNAME = U_FNAMETxtRef.value;
+      U_LNAME = U_LNAMETxtRef.value;
+      U_EMAIL = U_EMAILTxtRef.value;
+      U_ADDRESS = U_ADDRESSTxtRef.value;
+      U_PHONE = U_PHONETxtRef.value;
+      U_DOB = U_DOBTxtRef.value;
+      U_USER = U_USERTxtRef.value;
+      U_PASS = U_PASSTxtRef.value;
+      U_ROLE = U_ROLETxtRef.value;
+      //console.log(STU_FNAME);
+      let user_data = {
+        user: {
+          UID: U_ID,
+          fname: U_FNAME,
+          lname: U_LNAME,
+          Email: U_EMAIL,
+          address: U_ADDRESS,
+          pnumber: U_PHONE,
+          DOB: U_DOB,
+          username: U_USER,
+          pword: U_PASS,
+          urole: U_ROLE
+        },
+      };
+      callUSERWS("http://localhost:3030/user", "update", user_data).then(
+        (data) => {
+          console.log(data);
+          if (data.data > 0) {
+            alert(data.message);
+            clearInput();
+          }
+        }
+      );
+    })
+    deleteBtnRef.addEventListener("click", () => {
+      U_ID = U_IDTxtRef.value;
+      let user_data = {
+        UID: U_ID,
+      };
+      callUSERWS("http://localhost:3030/user", "delete", user_data).then(
+        (data) => {
+          console.log(data);
+          if (data.data > 0) {
+            alert(data.message);
+            clearInput();
+          }
+        }
+      );
+    })
+    selectBtnRef.addEventListener("click", () => {
+      UID = U_IDTxtRef.value;
+      callUSERWS("http://localhost:3030/user/" + UID, "select").then(
+        (data) => {
+          console.log(data);
+          if (data) {
+            alert(data.message);
+            U_IDTxtRef.value = data.data.UID;
+            U_FNAMETxtRef.value = data.data.fname;
+            U_LNAMETxtRef.value = data.data.lname;
+            U_EMAILTxtRef.value = data.data.Email,
+              U_ADDRESSTxtRef.value = data.data.address,
+              U_PHONETxtRef.value = data.data.pnumber,
+              U_DOBTxtRef.value = data.data.DOB;
+            U_USERTxtRef.value = data.data.username,
+              U_PASSTxtRef.value = data.data.pword,
+              U_ROLETxtRef.value = data.data.urole
+          }
+        }
+      );
+    });
+    selectallBtnRef.addEventListener("click", () => {
+      callUSERWS("http://localhost:3030/users", "select").then(
+        (data) => {
+          console.log(data);
+          if (data.data.length > 0) {
+            alert(data.message);
+            let output;
+            output = "<h1> user List </h1>";
+            output += "<table class='table'>";
+            output += "<thead>";
+            output += "<tr>";
+            output +=
+              "<th scope='col'>#</th><th scope='col'>First name</th><th scope='col'> Last name </th> <th scope='col'> Email </th> <th scope='col'> Address </th> <th scope='col'> Phone number </th>  <th scope='col'>DOB</th> <th scope='col'>Username</th> <th scope='col'> Password </th> <th scope='col'> Role </th>";
+            output += "</tr>";
+            output += "</thread>";
+            output += "<tbody>";
+            data.data.forEach((element) => {
+              output += "<tr>";
+              output += "<td>" + element.UID + "</td>";
+              output += "<td>" + element.fname + "</td>";
+              output += "<td>" + element.lname + "</td>";
+              output += "<td>" + element.Email + "</td>";
+              output += "<td>" + element.address + "</td>";
+              output += "<td>" + element.pnumber + "</td>";
+              output += "<td>" + element.DOB + "</td>";
+              output += "<td>" + element.username + "</td>";
+              output += "<td>" + element.pnumber + "</td>";
+              output += "<td>" + element.urole + "</td>";
+            });
+            output += "</tbody>";
+            output += "</table>";
+            let result = document.querySelector("#result");
+            result.innerHTML += output;
+            clearInput();
+          }
+        }
+      );
+    })
+  </script>
+  <footer>
+
+    <article class="containerft">
+      <article class="columnft"></article>
+      <a href="aboutus"><button>about us</button></a>
+    </article>
+
+    <article class="columnft">
+      <button>email</button>
+    </article>
+
+    <article class="columnft">
+      <button>address</button>
+    </article>
+    </article>
+  </footer>
+</body>
+
+</html>
